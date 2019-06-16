@@ -5,7 +5,7 @@
 </head>
 
 <body style="text-align: center">
-	<h3>Links to manage Airport Info  application</h3>
+	<h3>Airport Info  application</h3>
 	<table align="center">
 		<tr>
 			<td><h4>Swagger UI</h4></td>
@@ -24,19 +24,4 @@
 		</tr>
 	</table>
 </body>
-
-<ul>
-		<li>Required version of JAVA -> JDK 1.8 </li>
-		<li>If you run as standalone application, do a maven clean build using >mvn install
-			>java -jar airport-info-service-0.0.1-SNAPSHOT.jar</li>
-		<li>5) Use swagger to use load and airport apis and test it</li>
-		<li>This application is built with spring boot embedded in memory H2 Database. 
-			<br>Hence, the state is maintained only until the application is up and running. 
-		    You can change the datasource to external database for persistance.</li>
-		<li>As there are 50000 records of airports, I have used Batch processing to insert the data into in memory database.
-   			<br>Hence you can trigger http://localhost:8080/load API to load all the data into the database initially.
-		</li>
-		<li>Once the data is loaded onto the DB, you can start using the actual APIs to find Airports by name and Iata code</li>
-		<li>
-	</ul>
 </html>

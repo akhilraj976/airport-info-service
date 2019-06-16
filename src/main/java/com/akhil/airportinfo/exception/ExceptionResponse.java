@@ -13,6 +13,7 @@ public class ExceptionResponse {
 	public ExceptionResponse(String errorMsg, String httpStatus) {
 		super();
 		this.errorMsg = errorMsg;
+		this.httpStatus = httpStatus;
 	}
 
 	public String getErrorMsg() {

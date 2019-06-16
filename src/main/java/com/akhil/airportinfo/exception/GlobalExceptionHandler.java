@@ -26,6 +26,6 @@ public class GlobalExceptionHandler {
 		ExceptionResponse resp = new ExceptionResponse(ae.getMessage(), ae.getHttpStatusCode().toString());
 		
 		return new ResponseEntity<>(resp,
-				ae.getHttpStatusCode() != null ? ae.getHttpStatusCode() : HttpStatus.INTERNAL_SERVER_ERROR);
+				ae.getHttpStatusCode() != null ? ae.getHttpStatusCode(): HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

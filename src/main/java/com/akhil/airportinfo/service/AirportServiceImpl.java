@@ -42,13 +42,15 @@ public class AirportServiceImpl implements AirportService {
 		log.info("Deriving list of airports for a given name");
 		List<AirportInfo> airportNames = dao.getAirportByName(airportName);
 		List<Airport> airports = new ArrayList<>();
+		
+		if(airportNames == null || airportNames.isEmpty()){
+			throw new AirportException("No Matches found with the given name", HttpStatus.NOT_FOUND);
+		}
 		for (AirportInfo info : airportNames) {
 			Airport airport = createAirportResponse(info);
 			airports.add(airport);
 		}
-		if(airports.isEmpty()){
-			throw new AirportException("No Matches found with the given name", HttpStatus.NOT_FOUND);
-		}
+		
 		return airports;
 	}
 

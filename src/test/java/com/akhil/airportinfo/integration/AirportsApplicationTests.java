@@ -56,4 +56,10 @@ public class AirportsApplicationTests {
 		mockMvc.perform(get("/airport/v1/name/berlin")).andExpect(status().isOk()).andDo(print());
 	}
 
+	@Test
+	public void getAirportsByNameTestFailure() throws Exception {
+		Mockito.when(airRepo.findByName(Mockito.anyString())).thenReturn(null);
+
+		mockMvc.perform(get("/airport/v1/name/afdaf")).andExpect(status().isNotFound()).andDo(print());
+	}
 }
